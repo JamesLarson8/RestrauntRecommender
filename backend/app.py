@@ -1,7 +1,7 @@
 import json
 import os
 from flask import Flask, render_template, request
-from flask_cors import CORS
+#from flask_cors import CORS
 from helpers.MySQLDatabaseHandler import MySQLDatabaseHandler
 from random import randint
 import util
@@ -28,7 +28,7 @@ mysql_engine = MySQLDatabaseHandler(MYSQL_USER,MYSQL_USER_PASSWORD,MYSQL_PORT,MY
 mysql_engine.load_file_into_db()
 
 app = Flask(__name__)
-CORS(app)
+#CORS(app)
 
 # get restaurants from database
 load_restaurants = list(mysql_engine.query_selector("SELECT * FROM restaurant"))
